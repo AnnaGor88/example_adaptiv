@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    height: 10vh;
+    grid-area: header;
+    background-color: gray;
+}
+
+.inside_main {
+    background-color: chocolate;
+    height: 10vh;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.inside_main1 {
+    grid-area: inside_main1;
+}
+
+.inside_main2 {
+    grid-area: inside_main2;
+}
+
+.inside_main3 {
+    grid-area: inside_main3;
+}
+
+main {
+    height: 80vh;
+    grid-area: main;
+    background-color: blanchedalmond;
+    display: grid;
+    grid-template-areas: "inside_main1 inside_main2"
+        "inside_main3 inside_main3";
+    grid-gap: 20px;
+    align-items: end;
+}
+
+aside {
+    grid-area: aside;
+    background-color: burlywood;
+}
+
+div {
+    background-color: white;
+    height: 7vh;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.div1 {
+    grid-area: div1;
+}
+
+.div2 {
+    grid-area: div2;
+}
+
+.div3 {
+    grid-area: div3;
+}
+
+.div4 {
+    grid-area: div4;
+}
+
+footer {
+    height: 10vh;
+    grid-area: footer;
+    background-color: gray;
+    display: grid;
+    grid-template-areas: "div1 div2 div3 div4";
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header header header header"
+        "main main main aside"
+        "footer footer footer footer";
+    text-align: center;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    word-break: break-all;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        font-size: 12px;
+        grid-template-columns: max-content;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .aside {
+        height: 15vh;
+    }
+
+    .inside_main1, .inside_main2 {
+        width: 20%;
+    }
+
+    .inside_main3 {
+        width: 40%;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        display: grid;
+        grid-template-areas: "header header"
+            "aside aside"
+            "main main"
+            "footer footer";
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        gap: 20%;
+    }
+
+    .inside_main1, .inside_main2, .inside_main3 {
+        width: 100%;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-areas: "div1 div2"
+            "div3 div4";
+    }
+
+    .div1, .div2, .div3, .div4 {
+        height: 50%;
+    }
+}
